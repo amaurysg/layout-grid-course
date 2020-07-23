@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout - Espaciado - Grid</title>
+  </head>
+  <style>
+    body {
+      font-family: arial;
+    }
+
+    .container {
+      display: grid;
+      /*    grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      grid-gap: filas / columnas;  */
+      grid-gap: 10px 20px;
+
+      /*       grid-template-columns: repeat(3, 200px);
+      grid-template-rows: repeat(2, 200px); */
+      /* grid-template: repeat(2, 200px) / repeat(3, 200px); */
+      grid-template: 200px 200px 200px/ 25% 50% 25%;
+    }
+
+    .item {
+      background: lightblue;
+      padding: 10px;
+      border: 1px solid;
+      /* margin: 10px; */
+    }
+    .item:nth-of-type(4) {
+      background-color: blue;
+      overflow: auto;
+      /*  display: subgrid; */
+      display: grid;
+      grid-template: 50px 50px 50px/ 50px 50px 50 px;
+    }
+  </style>
+
+  <body>
+    <section class="container">
+      <div class="item">contenido #1</div>
+      <div class="item">contenido #2</div>
+      <div class="item">contenido #3</div>
+      <div class="item">
+        <div class="item">subitem #1</div>
+        <div class="item">subitem #2</div>
+        <div class="item">subitem #3</div>
+        <div class="item">subitem #4</div>
+        <div class="item">subitem #5</div>
+        <div class="item">subitem #6</div>
+        <div class="item">subitem #7</div>
+        <div class="item">subitem #8</div>
+      </div>
+      <div class="item">contenido #5</div>
+      <div class="item">contenido #6</div>
+      <div class="item">contenido #7</div>
+      <div class="item">contenido #8</div>
+      <div class="item">contenido #9</div>
+      <div class="item">contenido #10</div>
+      <div class="item">contenido #11</div>
+      <div class="item">contenido #12</div>
+    </section>
+  </body>
+</html>
