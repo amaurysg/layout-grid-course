@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout - Areas - Grid</title>
+  </head>
+  <style>
+    body {
+      font-family: arial;
+    }
+
+    .container {
+      display: grid;
+      grid-gap: 5px;
+      grid-template: repeat(6, 200px) / repeat(4, 200px);
+    }
+
+    .item {
+      background: lightgray;
+      padding: 10px;
+      border: 1px solid;
+      /*  border-radius: 5px; */
+      grid-gap: 10px;
+
+      /* margin: 10px; */
+    }
+
+    .item:nth-of-type(1) {
+      grid-column: 1 / span 4;
+      grid-row: 1 / span 2;
+    }
+
+    .item:nth-of-type(2) {
+    }
+
+    .item:nth-of-type(3) {
+    }
+
+    .item:nth-of-type(4) {
+    }
+
+    .item:nth-of-type(5) {
+    }
+
+    .item:nth-of-type(6) {
+    }
+  </style>
+
+  <body>
+    <section class="container">
+      <div class="item">#1</div>
+      <div class="item">#2</div>
+      <div class="item">#3</div>
+      <div class="item">#4</div>
+      <div class="item">#5</div>
+      <div class="item">#6</div>
+      <div class="item">#7</div>
+      <div class="item">#8</div>
+      <div class="item">#9</div>
+    </section>
+  </body>
+</html>
