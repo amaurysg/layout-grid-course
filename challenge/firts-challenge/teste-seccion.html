@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sección</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .contenido {
+        height: 100vh;
+        display: grid;
+      }
+      .contenido-seccion {
+        display: grid;
+        grid-template-rows: 15% 1fr;
+
+        grid-template-areas:
+          "title "
+          "pelis ";
+      }
+      .seccion-title {
+        display: grid;
+        grid-area: title;
+        align-items: center;
+        margin: 0;
+        -webkit-text-stroke: 1px blue;
+        color: transparent;
+      }
+      /*  .seccion-title::before {
+          content: "Butters Stotch";
+        } */
+      .peliculas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+      }
+      .peliculas-img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 100%;
+      }
+      .wrapper {
+        max-width: 1000px;
+      }
+      @media screen and (max-width: 450px) {
+        .seccion-title {
+          text-align: center;
+          visibility: hidden;
+        }
+        .seccion-title::before {
+          content: "Profesor Caos";
+          visibility: visible;
+        }
+        .peliculas {
+          display: grid;
+          grid-template-rows: repeat(3, 1fr);
+          grid-template-columns: none;
+          grid-gap: 5px;
+          height: 50vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="contenido">
+      <div class="contenido-seccion">
+        <h2 class="seccion-title" id="seccion-title">Butters Stotch</h2>
+        <div class="peliculas">
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/butters-perfil.jpg"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/Professor-chaos.png"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/butters-perfil.jpg"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="contenido-seccion">
+        <h2 class="seccion-title">Butters Stotch</h2>
+        <div class="peliculas">
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/butters-perfil.jpg"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/Professor-chaos.png"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/butters-perfil.jpg"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="contenido-seccion">
+        <h2 class="seccion-title">Butters Stotch</h2>
+        <div class="peliculas">
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/butters-perfil.jpg"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/Professor-chaos.png"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+          <a href="" class="peliculas-item">
+            <img
+              src="./images/butters-perfil.jpg"
+              alt=""
+              class="peliculas-img"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

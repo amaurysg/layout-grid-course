@@ -7,7 +7,7 @@ moneyBox(20);
 moneyBox(40);
 
 const moneyBox = () => {
-  var saveCoins = 0;
+  let saveCoins = 0;
   const countMoney = (coins) => {
     saveCoins += coins;
     console.log(saveCoins);
@@ -17,4 +17,4 @@ const moneyBox = () => {
 
 let total = moneyBox();
 total(10);
-total(20);
+total(10);

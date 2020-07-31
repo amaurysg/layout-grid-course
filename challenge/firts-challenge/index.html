@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First</title>
+    <style>
+      @font-face {
+        font-family: "icomoon";
+        src: url("fonts/icomoon.eot?74x0qz");
+        src: url("fonts/icomoon.eot?74x0qz#iefix") format("embedded-opentype"),
+          url("fonts/icomoon.ttf?74x0qz") format("truetype"),
+          url("fonts/icomoon.woff?74x0qz") format("woff"),
+          url("fonts/icomoon.svg?74x0qz#icomoon") format("svg");
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
+      }
+
+      [class^="icon-"],
+      [class*=" icon-"] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: "icomoon" !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .icon-home:before {
+        content: "\e900";
+      }
+      .icon-house:before {
+        content: "\e900";
+      }
+      .icon-circle-down:before {
+        content: "\e901";
+      }
+      .icon-down:before {
+        content: "\e901";
+      }
+      .icon-circle-bottom:before {
+        content: "\e901";
+      }
+      .icon-arrow:before {
+        content: "\e901";
+      }
+      .icon-equalizer:before {
+        content: "\e902";
+      }
+      .icon-sliders:before {
+        content: "\e902";
+      }
+      .icon-settings:before {
+        content: "\e902";
+      }
+      .icon-preferences:before {
+        content: "\e902";
+      }
+      .icon-dashboard:before {
+        content: "\e902";
+      }
+      .icon-control:before {
+        content: "\e902";
+      }
+      .icon-heart:before {
+        content: "\e903";
+      }
+      .icon-like:before {
+        content: "\e903";
+      }
+      .icon-love:before {
+        content: "\e903";
+      }
+      .icon-favorite:before {
+        content: "\e903";
+      }
+      .icon-fire:before {
+        content: "\e904";
+      }
+      .icon-flame:before {
+        content: "\e904";
+      }
+      .icon-hot:before {
+        content: "\e904";
+      }
+      .icon-popular:before {
+        content: "\e904";
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .grid-container-all {
+        display: grid;
+        grid-template-columns: 10% 1fr;
+        grid-template-rows: 10% 1fr;
+        grid-template-areas:
+          "header header"
+          "menu contenido";
+        height: 100vh;
+        width: 100vw;
+        grid-gap: 5px;
+      }
+      .header {
+        display: grid;
+        grid-area: header;
+        grid-template-columns: 25% 1f 20%;
+        grid-template-areas: "header-logo header-form header-users";
+        grid-auto-rows: 62px;
+        padding: 0 3em;
+      }
+
+      .header-logo {
+        display: grid;
+        grid-area: header-logo;
+        display: flex;
+        background: url("./images/cine.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        /* margin-right: 1.5em; */
+      }
+
+      .header-logo-title {
+        margin: auto 0;
+        -webkit-text-stroke: 1px #fd6766;
+        color: transparent;
+      }
+
+      .header-form {
+        display: grid;
+        grid-area: header-form;
+        height: 50%;
+        margin: auto 0;
+      }
+
+      .header-form input {
+        border-radius: 5px;
+        border-style: groove;
+      }
+      .header-users {
+        display: grid;
+        grid-area: header-users;
+        display: flex;
+        justify-content: space-around;
+        margin: auto 0;
+      }
+      .header-users-name {
+        margin: auto 0;
+        display: flex;
+      }
+      .header-users-img {
+        display: grid;
+        grid-area: header-users;
+        border-radius: 50%;
+        width: 50px;
+        margin: 0;
+        /* background: url("./images/butters-perfil.jpg");
+                    height: 100%; */
+      }
+      .header-users-arrow {
+        display: grid;
+        grid-area: header-form;
+        width: 25px;
+      }
+
+      .menu-list {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+          "icon1"
+          "icon2";
+        background-color: #fd6766;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        width: 100%;
+        padding-top: 10px;
+      }
+      .menu-list p {
+        text-align: center;
+        color: white;
+      }
+
+      .icon-home,
+      .icon-fire,
+      .icon-heart {
+        display: grid;
+        grid-area: icon1;
+        font-size: 2.5em;
+        color: white;
+      }
+      .icon-settings {
+        display: grid;
+        grid-area: icon1;
+        font-size: 2.5em;
+        color: white;
+      }
+
+      .contenido {
+        height: 100vh;
+        display: grid;
+      }
+      .contenido-seccion {
+        display: grid;
+        grid-template-rows: 15% 1fr;
+
+        grid-template-areas:
+          "title "
+          "pelis ";
+      }
+      .seccion-title {
+        display: grid;
+        grid-area: title;
+        align-items: center;
+        margin: 0;
+        -webkit-text-stroke: 1px blue;
+        color: transparent;
+      }
+      /*  .seccion-title::before {
+          content: "Butters Stotch";
+        } */
+      .peliculas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+      }
+      .peliculas-img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 100%;
+      }
+      @media screen and (max-width: 450px) {
+        .header {
+          padding: 0;
+        }
+        .header-users {
+          display: none;
+        }
+        .seccion-title {
+          text-align: center;
+          visibility: hidden;
+        }
+        .seccion-title::before {
+          content: "Profesor Caos";
+          visibility: visible;
+        }
+        .peliculas {
+          display: grid;
+          grid-template-rows: repeat(3, 1fr);
+          grid-template-columns: none;
+          grid-gap: 5px;
+          height: 50vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container-all">
+      <header class="header">
+        <div class="header-logo">
+          <figure>
+            <img src="" alt="" />
+          </figure>
+          <h2 class="header-logo-title">Movies.es</h2>
+        </div>
+        <form class="header-form" action="" class="header-form">
+          <input placeholder="Busca tu película, serie o anime" type="text" />
+        </form>
+        <nav class="header-users">
+          <a class="header-users-name" href="">Butters</a>
+          <span>
+            <img
+              class="header-users-img"
+              src="./images/butters-perfil.jpg"
+              alt=""
+            />
+          </span>
+          <span>
+            <img
+              class="header-users-arrow"
+              src="./images/galon-hacia-abajo.svg"
+              alt=""
+            />
+          </span>
+        </nav>
+      </header>
+      <section class="menu-list">
+        <nav>
+          <a class="icon-home" href=""></a>
+          <p>Home</p>
+          <a class="icon-fire" href=""></a>
+          <p>Fire</p>
+          <a class="icon-heart" href=""></a>
+          <p>heart</p>
+        </nav>
+        <nav>
+          <a class="icon-settings" href=""></a>
+          <p>Setup</p>
+        </nav>
+      </section>
+
+      <section class="contenido">
+        <div class="contenido-seccion">
+          <h2 class="seccion-title">Temp 1</h2>
+          <div class="peliculas">
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+              <div class="peliculas-item-overy"></div>
+            </a>
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="contenido-seccion">
+          <h2 class="seccion-title">Temp 2</h2>
+          <div class="peliculas">
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="contenido-seccion">
+          <h2 class="seccion-title">Temp 3</h2>
+          <div class="peliculas">
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+            <a href="" class="peliculas-item">
+              <img
+                src="./images/butters-perfil.jpg"
+                alt=""
+                class="peliculas-img"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
